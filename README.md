@@ -43,7 +43,6 @@ simple_returns = (closing_data.iloc[-1] - closing_data.iloc[0])/(closing_data.il
 log_returns = np.log((closing_data.iloc[-1])/(closing_data.iloc[0]))
 ```
 ### Sharpe Ratio
-Here I queried the closing data from the dataframe and used the ```.pct_change()``` function which calculates the percentage differnce from each day and the dropped all null values. This is neccessary since the first day has no percent change because there is no entry before it.
 
 <img width="625" height="245" alt="Screenshot 2026-04-22 at 11 14 04 PM" src="https://github.com/user-attachments/assets/95dd9e25-352b-4fe3-8e01-bcf7a15ea853" />
 
