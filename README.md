@@ -2,7 +2,9 @@
 
 ## Akhil Venkat
 
+$$\usepackage{mathtools}$$
 ---
+
 
 ## What is the Sharpe Ratio?
 
