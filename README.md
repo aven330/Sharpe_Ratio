@@ -2,6 +2,7 @@
 
 ### Akhil Venkat
 \usepackage{amsmath}
+\usepackage{mathtools}
 
 ---
 
@@ -19,7 +20,7 @@ Sharpe Ratio = (annualized returns - risk free rate)   / annualized volatility
 
 ## Why is the Sharpe Ratio Usefull?
 
-The Sharpe Ratio allows an investor to quantify how much \frac{1}{5}.
+The Sharpe Ratio allows an investor to quantify how much $\frac{1}{5}$.
 
 ## Accessing the Data
 
