@@ -15,7 +15,7 @@ The Sharpe Ratio measures the average return earned in excess of the risk-free r
 Sharpe Ratio = $\frac{annualized returns - risk free rate}{annualized volatility}$
 $R_{p}$
 $R_{f}$
-$k_{$\sigma$}$
+$k_{\sigma}$
 
 - **`annualized_returns`** -> returns of a investment computed yearly for better comparison. (Mean of daily returns multiplied by number of periods in the time horizon)
 - **`risk free rate`** -> rate at which an investment is considered to be risk free.
