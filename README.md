@@ -1,8 +1,7 @@
 # Sharpe Ratio Analysis
 
 ### Akhil Venkat
-\usepackage{amsmath}
-\usepackage{mathtools}
+$\usepackage{mathtools}$
 
 ---
 
