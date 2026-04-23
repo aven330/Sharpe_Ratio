@@ -32,7 +32,7 @@ def Sharpe(ticker_symbols, start, end, risk_free_rate = 0.04)
 ```    
 
 - ### Accessing the Data
-- For this task I utilized the crowdsource library yfinance which is an open-source tool that uses Yahoo's publicly available APIs
+For this task I utilized the crowdsource library yfinance which is an open-source tool that uses Yahoo's publicly available APIs
 ```
 import yfinance as yf
 def Sharpe(ticker_symbols, start, end, risk_free_rate = 0.04):
