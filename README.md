@@ -31,14 +31,14 @@ The Sharpe Ratio allows an investor to differentiate which investments returns w
 def Sharpe(ticker_symbols, start, end, risk_free_rate = 0.04)
 ```    
 
-- ### Accessing the Data
+   ### Accessing the Data
 For this task I utilized the crowdsource library yfinance which is an open-source tool that uses Yahoo's publicly available APIs
 ```
 import yfinance as yf
 def Sharpe(ticker_symbols, start, end, risk_free_rate = 0.04):
     data = pd.DataFrame(yf.download(ticker_symbols, start = start, end = end, auto_adjust = True))
 ```
-- ### Obtaining the Daily Returns
+   ### Obtaining the Daily Returns
 Here I queried the closing data from the dataframe and used the ```.pct_change()``` function which calculates the percentage differnce from each day and the dropped all null values. This is neccessary since the first day has no percent change because there is no entry before it.
 ```
 # Extracting Closing Data
