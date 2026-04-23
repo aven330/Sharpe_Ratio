@@ -46,3 +46,59 @@ closing_data = data['Close'].dropna()
 # Evaluating Daily Returns
 daily_returns = closing_data.pct_change().dropna()
 ```
+   ### Obtaining the Simple Returns
+Here I queried the closing data from the dataframe and used the ```.pct_change()``` function which calculates the percentage differnce from each day and the dropped all null values. This is neccessary since the first day has no percent change because there is no entry before it.
+```
+# Extracting Closing Data
+closing_data = data['Close'].dropna()
+# Evaluating Daily Returns
+daily_returns = closing_data.pct_change().dropna()
+```
+   ### Obtaining the Log Returns
+Here I queried the closing data from the dataframe and used the ```.pct_change()``` function which calculates the percentage differnce from each day and the dropped all null values. This is neccessary since the first day has no percent change because there is no entry before it.
+```
+# Extracting Closing Data
+closing_data = data['Close'].dropna()
+# Evaluating Daily Returns
+daily_returns = closing_data.pct_change().dropna()
+```
+   ### Obtaining the Annualized Returns
+Here I queried the closing data from the dataframe and used the ```.pct_change()``` function which calculates the percentage differnce from each day and the dropped all null values. This is neccessary since the first day has no percent change because there is no entry before it.
+```
+# Extracting Closing Data
+closing_data = data['Close'].dropna()
+# Evaluating Daily Returns
+daily_returns = closing_data.pct_change().dropna()
+```
+   ### Obtaining the Annualized Volatility
+Here I queried the closing data from the dataframe and used the ```.pct_change()``` function which calculates the percentage differnce from each day and the dropped all null values. This is neccessary since the first day has no percent change because there is no entry before it.
+```
+# Extracting Closing Data
+closing_data = data['Close'].dropna()
+# Evaluating Daily Returns
+daily_returns = closing_data.pct_change().dropna()
+```
+   ### Obtaining the Sharpe Ratio
+Here I queried the closing data from the dataframe and used the ```.pct_change()``` function which calculates the percentage differnce from each day and the dropped all null values. This is neccessary since the first day has no percent change because there is no entry before it.
+```
+# Extracting Closing Data
+closing_data = data['Close'].dropna()
+# Evaluating Daily Returns
+daily_returns = closing_data.pct_change().dropna()
+```
+   ### Obtaining the Rolling Sharpe Ratio
+Here I queried the closing data from the dataframe and used the ```.pct_change()``` function which calculates the percentage differnce from each day and the dropped all null values. This is neccessary since the first day has no percent change because there is no entry before it.
+```
+# Extracting Closing Data
+closing_data = data['Close'].dropna()
+# Evaluating Daily Returns
+daily_returns = closing_data.pct_change().dropna()
+```
+   ### Results
+Here I queried the closing data from the dataframe and used the ```.pct_change()``` function which calculates the percentage differnce from each day and the dropped all null values. This is neccessary since the first day has no percent change because there is no entry before it.
+```
+# Extracting Closing Data
+closing_data = data['Close'].dropna()
+# Evaluating Daily Returns
+daily_returns = closing_data.pct_change().dropna()
+```
