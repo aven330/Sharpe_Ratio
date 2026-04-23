@@ -39,7 +39,7 @@ import yfinance as yf
 
 data = pd.DataFrame(yf.download(ticker_symbols, start = start, end = end, auto_adjust = True))
 ```
-### Obtaining the Daily Returns
+### Daily Returns
 Here I queried the closing data from the dataframe and used the ```.pct_change()``` function which calculates the percentage differnce from each day. Then I made sure to dropp all null values since the first day has no percent change because there is no entry before it.
 ```
 # Extracting Closing Data
@@ -47,7 +47,7 @@ closing_data = data['Close'].dropna()
 # Evaluating Daily Returns
 daily_returns = closing_data.pct_change().dropna()
 ```
-### Obtaining the Simple Returns and Log Returns
+### Simple Returns and Log Returns
 - **`Simple Returns`**: I indexed the most recent closing value and subtracted the first closing value all over the first closing value to get the returns for the given time frame.
 - **`Log Returns`**: I took the log of the most recent closing value divided by the first closing value to get the log returns for the given time frame.
 ```
@@ -56,7 +56,7 @@ simple_returns = (closing_data.iloc[-1] - closing_data.iloc[0])/(closing_data.il
 # Evaluating Log Returns
 log_returns = np.log((closing_data.iloc[-1])/(closing_data.iloc[0]))
 ```
-### Obtaining the Annualized Returns
+### Annualized Returns
 The formula for Annualized Returns is ```daily_mean_returns``` * ```trading_days_in_year```
 ```
 # There are 252 trading days in a year
@@ -66,7 +66,7 @@ daily_mean_returns = daily_returns.mean()
 # Annualized Returns
 annualized_returns = daily_mean_returns * trading_days_in_year
 ```
-### Obtaining the Annualized Volatility
+### Annualized Volatility
 The formula for Annualized Volatility is ```daily_std_returns``` * ```np.sqrt(trading_days_in_year)``` (square root because standard deviation is just the square root of variance so to annualize it you have to square root the number of trading days in a year as well)
 ```
 # Standard Deviation Returns
@@ -74,12 +74,12 @@ daily_std_returns = daily_returns.std()
 # Annualized Volatility
 annualized_volatility = daily_std_returns*np.sqrt(trading_days_in_year)
 ```
-### Obtaining the Sharpe Ratio
+### Sharpe Ratio
 Here I queried the closing data from the dataframe and used the ```.pct_change()``` function which calculates the percentage differnce from each day and the dropped all null values. This is neccessary since the first day has no percent change because there is no entry before it.
 ```
 sharpe_ratio = (annualized_returns - risk_free_rate)  / annualized_volatility
 ```
-### Obtaining the Rolling Sharpe Ratio
+### Rolling Sharpe Ratio
 Here I queried the closing data from the dataframe and used the ```.pct_change()``` function which calculates the percentage differnce from each day and the dropped all null values. This is neccessary since the first day has no percent change because there is no entry before it.
 ```
 # Extracting Closing Data
