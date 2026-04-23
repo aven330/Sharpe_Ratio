@@ -83,11 +83,11 @@ rolling_std = daily_returns.rolling(window).std()
 rolling_returns = rolling_mean * trading_days_in_year
 rolling_volatility = rolling_std * np.sqrt(trading_days_in_year)
 rolling_sharpe_ratio = ((rolling_returns - risk_free_rate) / (rolling_volatility)).dropna()
+rolling_sharpe_ratio.plot()
 ```
 ### Results
-Here I created a new dataframe that shows simple returns, log returns and the sharpe ratio as well as the plot for rolling sharpe ratio.
+Here I created a new dataframe that shows simple returns, log returns and the sharpe ratio of all tickers.
 ```
 # Extracting Closing Data
 results = pd.DataFrame((simple_returns, log_returns, sharpe_ratio), index = pd.Index(['Simple Returns','Log_Returns', 'Sharpe Ratio'], name = 'Results'))
-rolling_sharpe_ratio.plot()
 ```
