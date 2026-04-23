@@ -1,12 +1,16 @@
 # Sharpe Ratio Analysis
 
-### Akhil Venkat
+## Akhil Venkat
 
 ---
 
 ## What is the Sharpe Ratio?
 
-The Sharpe Ratio measures the average return earned in excess of the risk-free rate per unit of total risk in an attempt to quantify the given success of any investment in comparison to a risk-free investment.
+The Sharpe Ratio measures the average return you earned above the risk-free rate per unit of total risk in an attempt to quantify the given success of any investment in comparison to a risk-free investment.
+
+## Why is the Sharpe Ratio Usefull?
+
+The Sharpe Ratio allows an investor to differentiate which investments returns were the most risk efficent compared to something more concrete like a Treasury bill or bond. And since it is a ratio, of annualized values, you can compare it to any investment allowing you to make more informed decisions.
 
 ## How is it calculated?
 
@@ -19,11 +23,13 @@ Sharpe Ratio = $\frac{R_{p} - R_{f}}{\sigma_{p}}$
 - **`risk free rate`** -> rate at which an investment is considered to be risk free.
 - **`annualized volatility`** -> the variance of an invesments returns computed yearly for better comparison. (Standard Deviation of Returns mulitplied by sqrt of number of periods in the time horizon)
 
-## Why is the Sharpe Ratio Usefull?
+## Creating the function
+```
+def Sharpe(ticker_symbols, start, end, risk_free_rate = 0.04)
+```
 
-The Sharpe Ratio allows an investor to quantify how much $\frac{1}{5}$.
-
-## Accessing the Data
+### Accessing the Data
+For this task I utilized the crowdsource library, yfinance which pulls data from yahoo finance.
 
 ```
 import yfinance as yf
