@@ -8,9 +8,9 @@ __________
 
 The Sharpe Ratio measures the average return you earned above the risk-free rate per unit of total risk in an attempt to quantify the given success of any investment in comparison to a risk-free investment.
 
-## Why is the Sharpe Ratio Usefull?
+## Why is the Sharpe Ratio Useful?
 
-The Sharpe Ratio allows an investor to differentiate which investments returns were the most risk efficent compared to something more concrete like a Treasury bill or bond. And since it is a ratio, of annualized values, you can compare it to any investment allowing you to make more informed decisions.
+The Sharpe Ratio allows an investor to differentiate which investments returns were the most risk efficient compared to something more concrete like a Treasury bill or bond. And since it is a ratio, of annualized values, you can compare it to any investment allowing you to make more informed decisions.
 
 ## Creating the function
 ```
@@ -26,7 +26,7 @@ import yfinance as yf
 data = pd.DataFrame(yf.download(ticker_symbols, start = start, end = end, auto_adjust = True))
 ```
 ### Daily Returns
-Here I queried the closing data from the dataframe and used the ```.pct_change()``` function which calculates the percentage differnce from each day. Then I made sure to dropp all null values since the first day has no percent change because there is no entry before it.
+Here I queried the closing data from the dataframe and used the ```.pct_change()``` function which calculates the percentage differnce from each day. Then I made sure to dropp all null values since the first day has no percent change because there is no entry before it and any other data that is missing, like holidays.
 ```
 # Extracting Closing Data
 closing_data = data['Close'].dropna()
@@ -36,8 +36,8 @@ daily_returns = closing_data.pct_change().dropna()
 ### Simple Returns and Log Returns
 - **`Simple Returns`**: I indexed the most recent closing value and divided it by the first closing value and then subtracted 1 to get the returns for the given time frame.
 - **`Log Returns`**: I took the log of the most recent closing value divided by the first closing value to get the log returns for the given time frame.
-**`Log Return Pros`**: Better for analyzing data over a long stretch (month and or year) since 
-**`Simple Return Pros`**: Used in Sharpe Ratio which is helpful for finding good investments and is just as efficent as log retuns when computing daily returns
+- **`Log Return Pros`**: Better for analyzing data over a long stretch (month and or year) since you can just add the daily changes
+- **`Simple Return Pros`**: Used in Sharpe Ratio which is helpful for finding good investments and is just as efficent as log retuns when computing daily returns
 ```
 # Evaluating Simple Returns
 simple_returns = (closing_data.iloc[-1] - closing_data.iloc[0])/(closing_data.iloc[0])
@@ -51,15 +51,15 @@ log_returns = np.log((closing_data.iloc[-1])/(closing_data.iloc[0]))
 - Return of Portfolio = **`annualized_returns`**
 - Standard Deviation of the Portfolio's Excess Return = **`annualized volatility`**
 
-- **`annualized_returns`** -> returns of a investment computed yearly for better comparison. (Mean of daily returns multiplied by number of trading days in a year)
+- **`annualized_returns`** -> returns of an investment computed yearly for better comparison. (Mean of daily returns multiplied by number of trading days in a year)
 - **`risk free rate`** -> theoretical rate of return on an investment with zero risk.
-- **`annualized volatility`** -> the variance of an invesments returns computed yearly for better comparison. (Standard Deviation of Returns mulitplied by sqrt of number of trading days in a year)
+- **`annualized volatility`** -> the variance of an invesment's returns computed yearly for better comparison. (Standard Deviation of Returns multiplied by sqrt of number of trading days in a year)
 ```
-# If annualized_velocity is 0 then sharpe_ratio will error so we create an edge case to prevent that
+# If annualized_volatility is 0 then sharpe_ratio will error so this edge case exists to prevent that
 if annualized_volatility != 0:
    sharpe_ratio = (annualized_returns - risk_free_rate)  / annualized_volatility
 else:
-   sharp_ratio = np.nan
+   sharpe_ratio = np.nan
 ```
 #### Annualized Returns
 The formula for Annualized Returns is ```daily_mean_returns``` * ```trading_days_in_year```
