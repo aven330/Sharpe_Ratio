@@ -28,15 +28,16 @@ The Sharpe Ratio allows an investor to differentiate which investments returns w
 
 ## Creating the function
 ```
-def Sharpe(ticker_symbols, start, end, risk_free_rate = 0.04)
+def Sharpe(ticker_symbols, start, end, risk_free_rate = 0.04):
+   ...
 ```    
 
    ### Accessing the Data
 For this task I utilized the crowdsource library yfinance which is an open-source tool that uses Yahoo's publicly available APIs
 ```
 import yfinance as yf
-def Sharpe(ticker_symbols, start, end, risk_free_rate = 0.04):
-    data = pd.DataFrame(yf.download(ticker_symbols, start = start, end = end, auto_adjust = True))
+
+data = pd.DataFrame(yf.download(ticker_symbols, start = start, end = end, auto_adjust = True))
 ```
    ### Obtaining the Daily Returns
 Here I queried the closing data from the dataframe and used the ```.pct_change()``` function which calculates the percentage differnce from each day and the dropped all null values. This is neccessary since the first day has no percent change because there is no entry before it.
@@ -46,21 +47,14 @@ closing_data = data['Close'].dropna()
 # Evaluating Daily Returns
 daily_returns = closing_data.pct_change().dropna()
 ```
-   ### Obtaining the Simple Returns
-Here I queried the closing data from the dataframe and used the ```.pct_change()``` function which calculates the percentage differnce from each day and the dropped all null values. This is neccessary since the first day has no percent change because there is no entry before it.
+   ### Obtaining the Simple Returns and Log Returns
+**`Simple Returns`**: I indexed the most recent closing value and subtracted the first closing value all over the first closing value to get the returns for the given time frame.
+**`Log Returns`**: I took the log of the most recent closing value divided by the first closing value to get the log returns for the given time frame
 ```
-# Extracting Closing Data
-closing_data = data['Close'].dropna()
-# Evaluating Daily Returns
-daily_returns = closing_data.pct_change().dropna()
-```
-   ### Obtaining the Log Returns
-Here I queried the closing data from the dataframe and used the ```.pct_change()``` function which calculates the percentage differnce from each day and the dropped all null values. This is neccessary since the first day has no percent change because there is no entry before it.
-```
-# Extracting Closing Data
-closing_data = data['Close'].dropna()
-# Evaluating Daily Returns
-daily_returns = closing_data.pct_change().dropna()
+# Evaluating Simple Returns
+simple_returns = (closing_data.iloc[-1] - closing_data.iloc[0])/(closing_data.iloc[0])
+# Evaluating Log Returns
+log_returns = np.log((closing_data.iloc[-1])/(closing_data.iloc[0]))
 ```
    ### Obtaining the Annualized Returns
 Here I queried the closing data from the dataframe and used the ```.pct_change()``` function which calculates the percentage differnce from each day and the dropped all null values. This is neccessary since the first day has no percent change because there is no entry before it.
