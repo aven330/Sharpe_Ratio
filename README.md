@@ -57,12 +57,16 @@ simple_returns = (closing_data.iloc[-1] - closing_data.iloc[0])/(closing_data.il
 log_returns = np.log((closing_data.iloc[-1])/(closing_data.iloc[0]))
 ```
    ## Obtaining the Annualized Returns
-Here I queried the closing data from the dataframe and used the ```.pct_change()``` function which calculates the percentage differnce from each day and the dropped all null values. This is neccessary since the first day has no percent change because there is no entry before it.
+The formula for annualized returns is ```daily_mean_returns``` x ```trading_days_in_year```(252)
 ```
-# Extracting Closing Data
-closing_data = data['Close'].dropna()
-# Evaluating Daily Returns
-daily_returns = closing_data.pct_change().dropna()
+# There are 252 trading days in a year
+trading_days_in_year = 252
+# Mean Returns
+daily_mean_returns = daily_returns.mean()
+# Standard Deviation Returns
+daily_std_returns = daily_returns.std()
+# Annualized Returns = Mean of daily returns multiplied by number of trading days in a year
+annualized_returns = daily_mean_returns * trading_days_in_year
 ```
    ## Obtaining the Annualized Volatility
 Here I queried the closing data from the dataframe and used the ```.pct_change()``` function which calculates the percentage differnce from each day and the dropped all null values. This is neccessary since the first day has no percent change because there is no entry before it.
