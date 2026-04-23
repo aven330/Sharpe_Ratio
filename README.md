@@ -2,7 +2,7 @@
 
 ## Akhil Venkat
 
----
+__________
 
 ## What is the Sharpe Ratio?
 
@@ -34,8 +34,9 @@ closing_data = data['Close'].dropna()
 daily_returns = closing_data.pct_change().dropna()
 ```
 ### Simple Returns and Log Returns
-- **`Simple Returns`**: I indexed the most recent closing value and subtracted the first closing value all over the first closing value to get the returns for the given time frame.
+- **`Simple Returns`**: I indexed the most recent closing value and divided it by the first closing value and then subtracted 1 to get the returns for the given time frame.
 - **`Log Returns`**: I took the log of the most recent closing value divided by the first closing value to get the log returns for the given time frame.
+
 ```
 # Evaluating Simple Returns
 simple_returns = (closing_data.iloc[-1] - closing_data.iloc[0])/(closing_data.iloc[0])
