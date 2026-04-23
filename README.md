@@ -16,7 +16,7 @@ The Sharpe Ratio allows an investor to differentiate which investments returns w
 ## How is it calculated?
 
 
-<img width="1000" height="500" alt="Screenshot 2026-04-22 at 9 15 38 PM" src="https://github.com/user-attachments/assets/667e0252-6cc4-4756-a7ce-79e5624e3a35" />
+<img width="1080" height="490" alt="Screenshot 2026-04-22 at 9 15 38 PM" src="https://github.com/user-attachments/assets/667e0252-6cc4-4756-a7ce-79e5624e3a35" />
 
 
 - return of portfolio = annualized returns
