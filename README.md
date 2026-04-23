@@ -54,7 +54,11 @@ Here I queried the closing data from the dataframe and used the ```.pct_change()
 - **`risk free rate`** -> theoretical rate of return on an investment with zero risk.
 - **`annualized volatility`** -> the variance of an invesments returns computed yearly for better comparison. (Standard Deviation of Returns mulitplied by sqrt of number of trading days in a year)
 ```
-sharpe_ratio = (annualized_returns - risk_free_rate)  / annualized_volatility
+# If annualized_velocity is 0 then sharpe_ratio will error so we create an edge case to prevent that
+if annualized_volatility != 0:
+   sharpe_ratio = (annualized_returns - risk_free_rate)  / annualized_volatility
+else:
+   sharp_ratio = np.nan
 ```
 #### Annualized Returns
 The formula for Annualized Returns is ```daily_mean_returns``` * ```trading_days_in_year```
@@ -67,7 +71,8 @@ daily_mean_returns = daily_returns.mean()
 annualized_returns = daily_mean_returns * trading_days_in_year
 ```
 #### Annualized Volatility
-The formula for Annualized Volatility is ```daily_std_returns``` * ```np.sqrt(trading_days_in_year)``` (square root because standard deviation is just the square root of variance so to annualize it you have to square root the number of trading days in a year as well)
+The formula for Annualized Volatility is ```daily_std_returns``` * ```np.sqrt(trading_days_in_year)``` 
+Why Square Root? Because standard deviation is just the square root of variance so to annualize it you have to square root the number of trading days in a year as well.
 ```
 # Standard Deviation Returns
 daily_std_returns = daily_returns.std()
