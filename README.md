@@ -1,7 +1,6 @@
 # Sharpe Ratio Analysis
 
 ### Akhil Venkat
-$\usepackage{mathtools}$
 
 ---
 
