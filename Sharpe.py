@@ -38,4 +38,5 @@ def Sharpe(ticker_symbols, start, end, risk_free_rate = 0.04):
     results = pd.DataFrame((simple_returns, log_returns, sharpe_ratio), index = pd.Index(['Simple Returns','Log_Returns', 'Sharpe Ratio'], name = 'Results'))
     rolling_sharpe_ratio.plot()
     return print(results)
+## Example
 Sharpe(['AAPL', 'SPY'], '2022-01-01', '2026-01-01')
