@@ -19,9 +19,9 @@ The Sharpe Ratio allows an investor to differentiate which investments returns w
 <img width="625" height="245" alt="Screenshot 2026-04-22 at 11 14 04 PM" src="https://github.com/user-attachments/assets/95dd9e25-352b-4fe3-8e01-bcf7a15ea853" />
 
 
-- return of portfolio = **`annualized_returns`**
-- risk-free rate = **`risk free rate`**
-- standard deviation of the portfolio's excess return = **`annualized volatility`**
+- Return of Portfolio = **`annualized_returns`**
+- Risk-Free Rate = **`risk free rate`**
+- Standard Deviation of the Portfolio's Excess Return = **`annualized volatility`**
 
 - **`annualized_returns`** -> returns of a investment computed yearly for better comparison. (Mean of daily returns multiplied by number of periods in the time horizon)
 - **`risk free rate`** -> rate at which an investment is considered to be risk free.
