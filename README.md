@@ -2,7 +2,6 @@
 
 ## Akhil Venkat
 
-$$\usepackage{mathtools}$$
 ---
 
 
