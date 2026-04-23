@@ -36,8 +36,9 @@ daily_returns = closing_data.pct_change().dropna()
 ### Simple Returns and Log Returns
 - **`Simple Returns`**: I indexed the most recent closing value and divided it by the first closing value and then subtracted 1 to get the returns for the given time frame.
 - **`Log Returns`**: I took the log of the most recent closing value divided by the first closing value to get the log returns for the given time frame.
-- **`Log Return Pros`**: Better for analyzing data over a long stretch (month and or year) since you can just add the daily changes
-- **`Simple Return Pros`**: Used in Sharpe Ratio which is helpful for finding good investments and is just as efficent as log retuns when computing daily returns
+- **`Log Return Pros`**: Better for analyzing data over a long stretch (month and or year) since you can just add the daily log returns
+- **`Simple Return Pros`**: The better fit for the Sharpe Ratio since the formula assumes returns follow a normal distribution.
+- Important Note: numerically equivalent at daily frequency since daily price moves are small enough that the difference is negligible.
 ```
 # Evaluating Simple Returns
 simple_returns = (closing_data.iloc[-1] - closing_data.iloc[0])/(closing_data.iloc[0])
