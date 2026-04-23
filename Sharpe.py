@@ -27,7 +27,11 @@ def Sharpe(ticker_symbols, start, end, risk_free_rate = 0.04):
     # Annualized Volatility = Standard Deviation of Returns mulitplied by sqrt of number of periods in the time horizon
     annualized_volatility = daily_std_returns*np.sqrt(trading_days_in_year)
     # Sharpe Ratio = measures the average return earned in excess of the risk-free rate per unit of total risk 
-    sharpe_ratio = (annualized_returns - risk_free_rate)  / annualized_volatility
+    # If annualized_velocity is 0 then sharpe_ratio will error so we create an edge case to prevent that
+    if annualized_volatility != 0:
+        sharpe_ratio = (annualized_returns - risk_free_rate)  / annualized_volatility
+    else:
+       sharp_ratio = np.nan
     # Rolling Sharpe Ratio
     rolling_mean = daily_returns.rolling(window).mean()
     rolling_std = daily_returns.rolling(window).std()
