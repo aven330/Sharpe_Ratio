@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 def Sharpe(ticker_symbols, start, end, risk_free_rate = 0.04):
     # Constants
     trading_days_in_year = 252
-    window = 5
+    window = 60 # Quarterly
     # Ticker and Spy Data
     data = pd.DataFrame(yf.download(ticker_symbols, start = start, end = end, auto_adjust = True))
     # Extracting Closing Data
