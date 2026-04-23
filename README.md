@@ -38,3 +38,11 @@ import yfinance as yf
 def Sharpe(ticker_symbols, start, end, risk_free_rate = 0.04):
     data = pd.DataFrame(yf.download(ticker_symbols, start = start, end = end, auto_adjust = True))
 ```
+- ### Obtaining the Daily Returns
+Here I queried the closing data from the dataframe and used the ```.pct_change()``` function which calculates the percentage differnce from each day and the dropped all null values. This is neccessary since the first day has no percent change because there is no entry before it.
+```
+# Extracting Closing Data
+closing_data = data['Close'].dropna()
+# Evaluating Daily Returns
+daily_returns = closing_data.pct_change().dropna()
+```
