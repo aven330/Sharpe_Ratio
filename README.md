@@ -4,7 +4,6 @@
 
 ---
 
-
 ## What is the Sharpe Ratio?
 
 The Sharpe Ratio measures the average return you earned above the risk-free rate per unit of total risk in an attempt to quantify the given success of any investment in comparison to a risk-free investment.
@@ -33,7 +32,7 @@ def Sharpe(ticker_symbols, start, end, risk_free_rate = 0.04)
 ```
 
 ### Accessing the Data
-For this task I utilized the crowdsource library, yfinance which pulls data from yahoo finance.
+For this task I utilized the crowdsource library yfinance which is an open-source tool that uses Yahoo's publicly available APIs
 
 ```
 import yfinance as yf
