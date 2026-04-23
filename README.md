@@ -102,5 +102,5 @@ results = pd.DataFrame((simple_returns, log_returns, sharpe_ratio), index = pd.I
 Sharpe(['AAPL', 'SPY'], '2022-01-01', '2026-01-01')
 ```
 ### Output
-<img width="700" height="900" alt="Screenshot 2026-04-23 at 4 48 47 PM" src="https://github.com/user-attachments/assets/163c49ec-92a8-45a1-a616-84e0f5efbb28" />
+<img width="900" height="700" alt="Screenshot 2026-04-23 at 4 48 47 PM" src="https://github.com/user-attachments/assets/163c49ec-92a8-45a1-a616-84e0f5efbb28" />
 Here we can see that...
