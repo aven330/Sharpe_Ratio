@@ -91,3 +91,4 @@ Here I created a new dataframe that shows simple returns, log returns and the sh
 # Extracting Closing Data
 results = pd.DataFrame((simple_returns, log_returns, sharpe_ratio), index = pd.Index(['Simple Returns','Log_Returns', 'Sharpe Ratio'], name = 'Results'))
 ```
+<img width="1056" height="804" alt="Screenshot 2026-04-23 at 12 57 31 AM" src="https://github.com/user-attachments/assets/9c96c2c5-8047-4794-a8f5-4893ce2c9d31" />
