@@ -103,4 +103,4 @@ Sharpe(['AAPL', 'SPY'], '2022-01-01', '2026-01-01')
 ```
 ### Output
 <img width="900" height="700" alt="Screenshot 2026-04-23 at 4 48 47 PM" src="https://github.com/user-attachments/assets/163c49ec-92a8-45a1-a616-84e0f5efbb28" />
-Here we can see that...
+Here we can see that 4-year window, SPY delivered better risk-adjusted performance despite AAPL having slightly higher raw returns which means that AAPL carried more volatility for the extra gain. Overall, SPY is better.
