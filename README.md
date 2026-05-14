@@ -1,6 +1,6 @@
 # Sharpe Ratio Analysis
 
-## Akhil Venkat
+## By: Akhil Venkat
 - [github](https://github.com/aven330/Sharpe_Ratio.git)
 - [google colab](https://colab.research.google.com/drive/1JGIagcveSiNlrJI5KaHu-M4BRFZUW8Qc?usp=sharing)
 ##
